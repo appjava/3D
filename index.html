@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Projects3D</title>
+
+<!--  Copy the following scripts in your page header -->
+      <script type="text/javascript" src="lib/big.min.js"></script>
+      <script type="text/javascript" src="lib/gl-matrix-min.js"></script>
+      <script type="text/javascript" src="lib/jszip.min.js"></script>
+      <script type="text/javascript" src="lib/core.min.js"></script>
+      <script type="text/javascript" src="lib/geom.min.js"></script>
+      <script type="text/javascript" src="lib/stroke.min.js"></script>
+      <script type="text/javascript" src="lib/batik-svgpathparser.min.js"></script>
+      <script type="text/javascript" src="lib/jsXmlSaxParser.min.js"></script>
+      <script type="text/javascript" src="lib/triangulator.min.js"></script>
+      <script type="text/javascript" src="lib/viewmodel.min.js"></script>
+      <script type="text/javascript" src="lib/viewhome.min.js"></script>
+
+      <style type="text/css">
+         *{
+            margin: 0px;
+            padding: 0px;
+         }
+         div{
+            border: none 1px gray;
+            margin-top: 12px;
+            text-align: center;
+         }
+        a{
+         text-decoration: none;
+         color: gray;
+        }
+        h1{
+         padding: 3px;
+        }
+        header{
+         position: absolute;
+         top: 6px;
+         left: 9px;
+         width: 96%;
+         border: none 2px purple;
+         text-align: center;
+        }
+        main{
+         position: absolute;
+         top: 60px;
+         margin-top: 6px;
+         padding: 12px;
+         border: none 1px blue;
+         width: 24%;
+         text-align: center;
+        }
+        aside{
+         margin-top:6px;
+         margin-right: 12px;
+         position: absolute;
+         right: 0px;
+         top: 60px;
+         width: 25%;
+         border: none 1px red;
+         text-align: center;
+         padding: 12px;
+        }
+        footer{
+         border: none red 1px;
+         position: absolute;
+         bottom: 5px;
+         right: 9px;
+         width: 93%;
+         z-index: -1;
+         padding: 12px;
+         text-align: right;
+        }
+        section{
+         position: absolute;
+         top: 60px;
+         left: 27%;
+         border: none 2px purple;
+         width: 40%;
+         margin: 6px;
+         padding: 12px;
+         text-align: center;
+        }
+        section img{
+         width: 90%;
+         margin-top: 30px;
+         border: none 1px navy;
+        }
+
+        /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+      </style>
+   </head>
+
+<body>
+   <header>
+      <h1>EchoGroup Projects</h1>
+      <nav></nav>
+   </header>
+   <aside>
+      <h3>Ligths</h3>
+      <div>
+         <h4>Balcony</h4>
+         <p><span>Off</span>
+         <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>On</span></p>
+      </div>
+      <div>
+      <h4>Room</h4>
+      <p><span>Off</span>
+      <label class="switch">
+         <input type="checkbox">
+         <span class="slider round"></span>
+       </label>
+       <span>On</span></p>
+      </div>
+      <div>
+         <h4>Living</h4>
+         <p><span>Off</span>
+         <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>On</span></p>
+      </div>
+      <div>
+         <h4>Exterior</h4>
+         <p><span>Off</span>
+         <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>On</span></p>
+      </div>
+      <div>
+         <h4>Standby</h4>
+         <p><span>Off</span>
+         <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>On</span></p>
+      </div>
+      <div>
+         <h4>Inversor</h4>
+         <p><span>Off</span>
+         <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+          <span>On</span></p>
+      </div>
+   </aside>
+   <section>
+      <h3>View</h3>
+      <img src="imgs/pieza2.png" alt="image">
+   </section>
+   <main>
+   <h3>Models</h3>
+   <div>
+   <figure>
+   <a href="#" onclick='viewHomeInOverlay("projects/pieza.zip", 
+      {roundsPerMinute:    1,                              
+      widthByHeightRatio: 4/3,                            
+      navigationPanel: "none",                                      
+      aerialViewButtonText: "Aerial view",                
+      virtualVisitButtonText: "Virtual visit",            
+      activateCameraSwitchKey: true,                      
+      viewerControlsAdditionalHTML: "",                   
+      readingHomeText: "Reading",                         
+      readingModelText: "Model",                          
+      noWebGLSupportError: "No WebGL support"             
+      })'>
+   <img src="imgs/pieza.png" alt="image" width="120px" height="60px">Pieza</a>
+      </figure>
+   </div>
+   <div>
+      <figure>
+      <a href="#" onclick='viewHomeInOverlay("projects/echoMirador.zip", 
+         {roundsPerMinute:    1,                              
+         widthByHeightRatio: 4/3,                            
+         navigationPanel: "none",                                      
+         aerialViewButtonText: "Aerial view",                
+         virtualVisitButtonText: "Virtual visit",            
+         activateCameraSwitchKey: true,                      
+         viewerControlsAdditionalHTML: "",                   
+         readingHomeText: "Reading",                         
+         readingModelText: "Model",                          
+         noWebGLSupportError: "No WebGL support"             
+         })'>
+      <img src="imgs/Mirador.png" alt="image" width="120px" height="60px">Mirador</a>
+      </figure>
+   </div>
+   <div>
+      <figure>
+      <a href="#" onclick='viewHomeInOverlay("projects/EchoHome2021.zip", 
+         {roundsPerMinute:    1,                              
+         widthByHeightRatio: 4/3,                            
+         navigationPanel: "none",                                      
+         aerialViewButtonText: "Aerial view",                
+         virtualVisitButtonText: "Virtual visit",            
+         activateCameraSwitchKey: true,                      
+         viewerControlsAdditionalHTML: "",                   
+         readingHomeText: "Reading",                         
+         readingModelText: "Model",                          
+         noWebGLSupportError: "No WebGL support"             
+         })'>
+      <img src="imgs/Home.png" alt="image" width="120px" height="60px">Home</a>
+      </figure>
+   </div>
+   <div>
+      <figure>
+      <a href="#" onclick='viewHomeInOverlay("projects/EchoParche2021.zip", 
+         {roundsPerMinute:    1,                              
+         widthByHeightRatio: 4/3,                            
+         navigationPanel: "none",                                      
+         aerialViewButtonText: "Aerial view",                
+         virtualVisitButtonText: "Virtual visit",            
+         activateCameraSwitchKey: true,                      
+         viewerControlsAdditionalHTML: "",                   
+         readingHomeText: "Reading",                         
+         readingModelText: "Model",                          
+         noWebGLSupportError: "No WebGL support"             
+         })'>
+      <img src="imgs/Parche.png" alt="image" width="120px" height="60px">Parche</a>
+      </figure>
+   </div>
+   <div>
+      <figure>
+      <a href="#" onclick='viewHomeInOverlay("projects/EchoPlataforma2021.zip", 
+         {roundsPerMinute:    1,                              
+         widthByHeightRatio: 4/3,                            
+         navigationPanel: "none",                                      
+         aerialViewButtonText: "Aerial view",                
+         virtualVisitButtonText: "Virtual visit",            
+         activateCameraSwitchKey: true,                      
+         viewerControlsAdditionalHTML: "",                   
+         readingHomeText: "Reading",                         
+         readingModelText: "Model",                          
+         noWebGLSupportError: "No WebGL support"             
+         })'>
+      <img src="imgs/Plataforma.png" alt="image" width="120px" height="60px">Plataforma</a>
+      </figure>
+   </div>
+   <div>
+      <figure>
+      <a href="#" onclick='viewHomeInOverlay("projects/EchoCaya.zip", 
+         {roundsPerMinute:    1,                              
+         widthByHeightRatio: 4/3,                            
+         navigationPanel: "none",                                      
+         aerialViewButtonText: "Aerial view",                
+         virtualVisitButtonText: "Virtual visit",            
+         activateCameraSwitchKey: true,                      
+         viewerControlsAdditionalHTML: "",                   
+         readingHomeText: "Reading",                         
+         readingModelText: "Model",                          
+         noWebGLSupportError: "No WebGL support"             
+         })'>
+      <img src="imgs/Caya.png" alt="pieza" width="120px" height="60px">Caya</a>
+      </figure>
+   </div>
+   </main>
+   <footer>
+      <h3>EchoGroup</h3>
+      <h4>Derechos Reservados</h4>
+      <a href="http://www.eteks.com/index_us.html">Powered by eTeks</a>
+      <address></address>
+   </footer>
+</body>
+</html>
